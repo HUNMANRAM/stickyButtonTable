@@ -1,0 +1,49 @@
+<div class="container">
+  <!-- Crew List Button -->
+  <button class="crew-list-btn" (click)="toggleTable()" [ngClass]="{ 'right-align': !showTable }">
+    Crew List
+  </button>
+
+  <!-- Table -->
+  <div class="table-container" *ngIf="showTable">
+    <div class="table-header">
+      <h3 class="table-title">Crew List</h3>
+      <div class="toggle-buttons">
+        <button class="toggle-btn" [class.active]="activeTab === 'active'" (click)="setActiveTab('active')">
+          Active
+        </button>
+        <button class="toggle-btn" [class.active]="activeTab === 'inactive'" (click)="setActiveTab('inactive')">
+          Inactive
+        </button>
+      </div>
+    </div>
+
+    <!-- <wj-flex-grid [itemsSource]="tableData" [allowSorting]="true">
+      <wj-flex-grid-column [header]="'PHM'" [binding]="'phm'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Outlier'" [binding]="'outlier'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Threshold'" [binding]="'threshold'"></wj-flex-grid-column>
+      <wj-flex-grid-column
+        [header]="'Failure DR'"
+        [binding]="'failureDr'"
+      ></wj-flex-grid-column>
+    </wj-flex-grid> -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>PHM</th>
+          <th>Outlier</th>
+          <th>Threshold</th>
+          <th>Failure DR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData">
+          <td>{{ row.phm }}</td>
+          <td>{{ row.outlier }}</td>
+          <td>{{ row.threshold }}</td>
+          <td>{{ row.failureDr }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+.container {
+    position: relative;
+    height: 100vh; /* Full height for vertical centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  /* Crew List Button */
+  .crew-list-btn {
+    position: absolute;
+    transform: translateY(-50%) rotate(-90deg);
+    left: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10; /* Ensures button stays above the table */
+  }
+  
+  .crew-list-btn.right-align {
+    left: auto;
+    right: 16px;
+    transform: translateY(-50%)  rotate(-90deg);
+  }
+  
+  /* Table container */
+  .table-container {
+    width: 80%; /* Table width */
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Table header */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .table-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .toggle-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-btn.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+  }
+  
+
+  .crew-list-button {
+    position: absolute; /* Keeps the button positioned relative to its container */
+    top: 50%; /* Centers the button vertically */
+    transform: translateY(-50%); /* Adjusts for vertical centering */
+    left: -50px; /* Adjust this value to position the button outside the table */
+    writing-mode: vertical-rl; /* Rotates the button text vertically */
+    text-align: center;
+    background-color: #007bff; /* Your desired button color */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensures it stays above the table */
+}
+
+.crew-list-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+@media (max-width: 768px) {
+    .crew-list-button {
+        left: 0; /* Move the button closer to the table for smaller screens */
+        z-index: 9999; /* Ensure it's still visible */
+    }
+}
